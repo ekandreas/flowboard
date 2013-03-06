@@ -34,6 +34,11 @@
     box-shadow: 5px 5px 5px #ccc;
 }
 
+.note .readmore{
+	font-size:  10px;
+	color:#666666;
+	font-family:Arial,Verdana,sans-serif;
+	text-decoration: none;
 }
 
 .x_note{

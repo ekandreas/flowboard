@@ -47,6 +47,9 @@ Please post ideas at the plugin site http://plugins.flowcom.se/flowboard
 
 == Changelog ==
 
+= 1.5.4 =
+* Added a readmore link in the note if selected
+
 = 1.5.3 =
 * Touch-Pounch added, support for ipad/iphone
 

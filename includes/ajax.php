@@ -74,8 +74,9 @@ class FlowBoard_Ajax{
         $estimate       = (int)esc_attr($_POST['estimate']);
         $timeleft       = (int)esc_attr($_POST['timeleft']);
         $postcontent    = wp_kses_post($_POST['postcontent']);
+				$add_link 			= $_POST['add_link'] ? true : false;
 
-        $dataArr = array('id'=>0,'author'=>$author,'color'=>$color,'zindex'=>$zindex,'estimate'=>$estimate,'timeleft'=>$timeleft,'xyz'=>$pos);
+        $dataArr = array('id'=>0,'author'=>$author,'color'=>$color,'zindex'=>$zindex,'estimate'=>$estimate,'timeleft'=>$timeleft,'xyz'=>$pos,'add_link'=>$add_link);
 
         if (is_numeric($id) && $id>0)
         {

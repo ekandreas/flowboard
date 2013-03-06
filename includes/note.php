@@ -15,6 +15,7 @@ class FlowBoard_Note{
     public $zindex;
     public $status;
     public $postcontent;
+		public $add_link;
 
     /**
      * @param $id
@@ -34,6 +35,7 @@ class FlowBoard_Note{
             $this->timeleft = $dataArr->timeleft;
             $this->estimate = $dataArr->estimate;
             $this->status = $dataArr->status;
+						$this->add_link = $dataArr->add_link;
             $this->postcontent = $post->post_content;
             list($this->left,$this->top,$this->zindex) = explode('x', $dataArr->xyz);
             $this->board = $dataArr->board;
@@ -85,15 +87,20 @@ class FlowBoard_Note{
         }
 
         $str .= '>
-                    <div class="body">'.$this->body.'</div>
-                    <div class="author">' . $this->author . '</div>
-                    <span class="data hidden_field">'.$this->id.'</span>
-                    <span class="status hidden_field">'.$this->status.'</span>
-                    <span class="color hidden_field">'.$this->color.'</span>
-                    <div class="time">
-                        <span class="timeleft">'.$this->timeleft.'</span>/<span class="estimate">'.$this->estimate.'</span>
-                    </div>
-                </div>';
+							<div class="body">'.$this->body.'</div>
+							<div class="author">' . $this->author . '</div>
+							<span class="data hidden_field">'.$this->id.'</span>
+							<span class="status hidden_field">'.$this->status.'</span>
+							<span class="color hidden_field">'.$this->color.'</span>
+							<div class="time">
+									<span class="timeleft">'.$this->timeleft.'</span>/<span class="estimate">'.$this->estimate.'</span>
+							</div>';
+
+				if ( $this->add_link ){
+					$str .= '<div class="readmore"><a href="' . get_permalink( $this->id ) . '">Read more</a></div>';
+				}
+
+        $str .= '</div>';
 
         return $str;
     }
@@ -145,7 +152,12 @@ class FlowBoard_Note{
                 <br/><br/>
                 <label>Text</label> <!-- Clicking one of the divs changes the color of the preview -->
                 <textarea class="pr-postcontent" name="note-postcontent" id="note-postcontent">' . $this->postcontent . '</textarea>
-                <div class="clear"></div>
+                <br/>
+                <input type="checkbox" class="pr-addlink" id="add_link" name="add_link" ';
+
+				if ( $this->add_link ) $str .= 'checked';
+
+				$str .= '/>Add hyperlink to the post in this note<div class="clear"></div>
                 <button id="note-submit" class="dialog_button button-primary">Save</button>';
 
             if ($this->id && is_user_logged_in()){
