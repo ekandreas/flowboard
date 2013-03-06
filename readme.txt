@@ -2,8 +2,8 @@
 Contributors: EkAndreas
 Tags: agile, tools, whiteboard, project management, sticky notes, kanban, scrum
 Requires at least: 3.4
-Tested up to: 3.5
-Stable tag: 1.5.3
+Tested up to: 3.5.1
+Stable tag: 1.5.4
 
 FlowBoard makes it easier for web development to visualize the agile process.
 
