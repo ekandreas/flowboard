@@ -181,6 +181,8 @@ class FlowBoard_Main{
             'parent' => 'Parent Board',
         ),) );
 
+				flush_rewrite_rules();
+
         if (!is_admin()) {
 
             //Kolla av nu om användaren har access alternativt om Public Access är aktiverat.
