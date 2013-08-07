@@ -42,8 +42,8 @@ Please post ideas at the plugin site http://plugins.flowcom.se/flowboard
 
 == Screenshots ==
 
-1. The whiteboard of notes.
-2. Edit your note with simple text OR go to the post for more information.
+1. Example of a FlowBoard with notes.
+2. Edit the board with configurable zones.
 
 == Changelog ==
 
