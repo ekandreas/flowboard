@@ -169,8 +169,6 @@ class FlowBoard_Ajax{
             $meta = get_post_meta($post->ID, flowboard_metadata(), true);
             $meta = json_decode($meta);
             list( $l , $t , $z ) = explode('x', $meta->xyz);
-            error_log($xyz);
-            error_log($meta->xyz);
             if ( $l == $left && $t == $top ) {
                 $moved = true;
                 $left += 4;

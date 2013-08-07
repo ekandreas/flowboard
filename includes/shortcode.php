@@ -132,7 +132,7 @@ class FlowBoard_Shortcode {
         </p>
     </div>
 
-        <script language="javascript">
+        <script>
             function flowboardSetShortCode() {
 
                 var override    = jQuery('#flowboard_override').is(':checked');

@@ -2,8 +2,8 @@
 Contributors: EkAndreas
 Tags: agile, tools, whiteboard, project management, sticky notes, kanban, scrum
 Requires at least: 3.4
-Tested up to: 3.5.1
-Stable tag: 1.5.5
+Tested up to: 3.6
+Stable tag: 1.6
 
 FlowBoard makes it easier for web development to visualize the agile process.
 
@@ -27,7 +27,7 @@ This section describes how to install the plugin and get it working.
 
 1. Download the plugin
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Create a new board in wp-admin/Notes/Boards (just title is enough)
+3. Create a new board in wp-admin/Flowboard/Boards (just title is enough)
 4. Open a post or a page and click the "note"-button to add a board to your page!
 
 In the admin settings menu you can change the board background image for your purposes.
@@ -46,6 +46,12 @@ Please post ideas at the plugin site http://plugins.flowcom.se/flowboard
 2. Edit your note with simple text OR go to the post for more information.
 
 == Changelog ==
+
+= 1.6 =
+* Admin menu moved
+* Flush rewrite rules made in plugin activate/deactivate
+* Removed some error_log messages
+*
 
 = 1.5.5 =
 * Flush rewrite rules after new registration of post types
