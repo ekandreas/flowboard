@@ -3,7 +3,7 @@ Contributors: EkAndreas
 Tags: agile, tools, whiteboard, project management, sticky notes, kanban, scrum
 Requires at least: 3.4
 Tested up to: 3.6
-Stable tag: 1.6
+Stable tag: 1.6.1
 
 FlowBoard makes it easier for web development to visualize the agile process.
 
@@ -47,11 +47,14 @@ Please post ideas at the plugin site http://plugins.flowcom.se/flowboard
 
 == Changelog ==
 
+= 1.6.1 =
+* Columns for Notes with board and status added
+* Function to move, delete and detach notes/posts in one board as batch.
+
 = 1.6 =
 * Admin menu moved
 * Flush rewrite rules made in plugin activate/deactivate
 * Removed some error_log messages
-*
 
 = 1.5.5 =
 * Flush rewrite rules after new registration of post types

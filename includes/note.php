@@ -4,6 +4,7 @@ class FlowBoard_Note{
 
     public $id;
     public $board;
+    public $board_name;
     public $author;
     public $body;
     public $color;
@@ -26,6 +27,7 @@ class FlowBoard_Note{
 
         if ($id){
             $post = get_post($id);
+
             $dataString = get_post_meta($post->ID,flowboard_metadata());
             $dataArr = json_decode($dataString[0]);
             $this->id = $id;
@@ -38,7 +40,12 @@ class FlowBoard_Note{
 						$this->add_link = $dataArr->add_link;
             $this->postcontent = $post->post_content;
             list($this->left,$this->top,$this->zindex) = explode('x', $dataArr->xyz);
-            $this->board = $dataArr->board;
+
+            $this->board = get_post_meta( $id, flowboard_metakey(), true );
+            if( $this->board ){
+                $board_post = get_post( $this->board );
+                $this->board_name = $board_post->post_title;
+            }
         }
         else{
             $current_user = wp_get_current_user();
@@ -51,6 +58,7 @@ class FlowBoard_Note{
             $this->status = "";
             $this->postcontent = '';
             $this->board = 0;
+            $this->board_name = "";
         }
     }
 

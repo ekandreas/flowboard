@@ -34,6 +34,28 @@ class FlowBoard_Board{
         return $posts;
     }
 
+    static function all_boards(){
+        $args = array('post_type'=>'flowboard_board','numberposts'=>-1,'orderby'=>'post_title','order'=>'ASC');
+        $posts = get_posts($args);
+        return $posts;
+    }
+
+    static function select_options( $exclude_board_id = 0, $selected_board_id = 0 ){
+
+        ?>
+        <option value="0"><?php _e( '-- choose a FlowBoard --', 'flowboard' ); ?></option>
+        <?php
+
+        foreach( FlowBoard_Board::all_boards() as $post ){
+
+            if( $exclude_board_id && $post->ID == $exclude_board_id ) continue;
+
+            ?>
+            <option value="<?php echo $post->ID; ?>" <?php if( $selected_board_id == $post->ID ) echo "selected"; ?>><?php echo $post->post_title; ?></option>
+            <?php
+        }
+
+    }
 
 }
 
